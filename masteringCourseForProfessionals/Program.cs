@@ -32,6 +32,12 @@
             var calc2 = new Calculator<int>();
             Console.WriteLine($"Addition result :{calc2.Add(12, 10)}");
 
+            var calc3 = new Calculator<double>();
+            Console.WriteLine($"Addition result :{calc3.Add(12.4, 10.7)}");
+
+            var calc4 = new Calculator<char>();
+            Console.WriteLine($"Addition result :{calc4.Add('A', 'B')}");
+
             Console.WriteLine("Hello, World!");
         }
     }
