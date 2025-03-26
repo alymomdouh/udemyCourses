@@ -20,7 +20,7 @@
             var mySampleChar = new Sample<char>();
             mySampleChar.Field = 'A';
             Console.WriteLine(mySampleChar.ShowInfo());
-
+            ShowValueAndType(mySampleChar.Field);
 
             Console.WriteLine("-----------------------------------------------------");
             Console.WriteLine("-------------Using Calculator -----------------------");
@@ -37,6 +37,13 @@
 
             var calc4 = new Calculator<char>();
             Console.WriteLine($"Addition result :{calc4.Add('A', 'B')}");
+
+            ShowValueAndType<dynamic>(calc4);
+
+            void ShowValueAndType<TVariable>(TVariable variable)
+            {
+                Console.WriteLine($"Type: {variable.GetType()}, Value: {variable}");
+            }
 
             Console.WriteLine("Hello, World!");
         }
