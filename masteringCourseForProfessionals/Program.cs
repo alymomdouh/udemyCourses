@@ -46,7 +46,16 @@
             }
             Sum(10, 20, ShowSumResult);
             ShowSumResult(12, "");
-
+            SubTract(50, 20, (result) =>
+                        {
+                            Console.WriteLine($"Result is => :{result}");
+                        }
+            );// lambda expression
+            Sum(10, 20, (result, message) =>
+            {
+                // function body
+                Console.WriteLine($"Result is => :{result}");
+            });
             void ShowSumResult(int result, string message)
             {
                 Console.WriteLine($"Result is => :{result}");
@@ -56,7 +65,19 @@
                 var result = x + y;
                 showSumResult(result, "");
             }
+            void SubTract(int x, int y, Action<int> showSumResult)
+            {
+                var result = x - y;
+                showSumResult(result);
+            }
 
+            var show = delegate (int result)
+            {
+                Console.WriteLine($"Result is => :{result}");
+            };
+
+            SubTract(40, 10, show);
+            show(50);
 
             Console.WriteLine("Hello, World!");
         }
