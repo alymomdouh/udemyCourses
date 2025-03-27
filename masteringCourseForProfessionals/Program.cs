@@ -44,6 +44,19 @@
             {
                 Console.WriteLine($"Type: {variable.GetType()}, Value: {variable}");
             }
+            Sum(10, 20, ShowSumResult);
+            ShowSumResult(12, "");
+
+            void ShowSumResult(int result, string message)
+            {
+                Console.WriteLine($"Result is => :{result}");
+            }
+            void Sum(int x, int y, Action<int, string> showSumResult)
+            {
+                var result = x + y;
+                showSumResult(result, "");
+            }
+
 
             Console.WriteLine("Hello, World!");
         }
